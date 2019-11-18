@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BTHConnect</string>
+    <string name="author0">Olle</string>
+    <string name="author1">Richa</string>
+    <string name="author2">Nikhil</string>
+    <string name="author3">Akhil</string>
 </resources>
