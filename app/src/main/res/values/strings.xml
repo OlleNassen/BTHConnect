@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">BTHConnect</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
+    <string name="connect">Connect</string>
+    <string name="home">Home</string>
+    <string name="events">Events</string>
+
+
     <string name="author0">Olle</string>
     <string name="author1">Richa</string>
     <string name="author2">Nikhil</string>
     <string name="author3">Akhil</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
