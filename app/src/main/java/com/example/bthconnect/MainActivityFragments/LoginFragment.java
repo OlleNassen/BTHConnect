@@ -31,7 +31,6 @@ public class LoginFragment extends Fragment {
     private static final int MY_REQUEST_CODE = 15; // random number, needed for whatever reason
     List<AuthUI.IdpConfig> providers;
     Button btn_connect;
-    FirebaseUser localUser; // move to activity?
 
     @Nullable
     @Override
@@ -73,8 +72,8 @@ public class LoginFragment extends Fragment {
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
             if(resultCode == RESULT_OK){
-                localUser = FirebaseAuth.getInstance().getCurrentUser();
-                Toast.makeText(getActivity(), "Welcome " + localUser.getDisplayName(), Toast.LENGTH_SHORT).show();
+                ((MainActivity)getActivity()).localUser = FirebaseAuth.getInstance().getCurrentUser();
+                Toast.makeText(getActivity(), "Welcome " + ((MainActivity)getActivity()).localUser.getDisplayName(), Toast.LENGTH_SHORT).show();
                 ((MainActivity)getActivity()).setViewPager(1);
             }
             else

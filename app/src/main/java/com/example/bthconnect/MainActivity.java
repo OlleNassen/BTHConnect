@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentAdapter fragAdapter;
     private ViewPager viewPager;
+    public FirebaseUser localUser; // public for convenience
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +51,4 @@ public class MainActivity extends AppCompatActivity {
     public void setViewPager(int fragment){
         viewPager.setCurrentItem(fragment);
     }
-
 }
