@@ -17,6 +17,7 @@ import com.example.bthconnect.R;
 import com.firebase.ui.auth.AuthUI;
 
 public class MenuFragment extends Fragment {
+    Button btn_home;
     Button btn_events;
     Button btn_signOut;
 
@@ -24,6 +25,14 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.main_menu_fragment, container, false);
+
+        btn_home = (Button)view.findViewById(R.id.xmlHome);
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(2);
+            }
+        });
 
         btn_signOut = (Button)view.findViewById(R.id.xmlSignout);
         btn_signOut.setOnClickListener(new View.OnClickListener() {

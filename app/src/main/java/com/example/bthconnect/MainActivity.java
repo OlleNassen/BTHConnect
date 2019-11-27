@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.bthconnect.FragmentAdapter.FragmentAdapter;
+import com.example.bthconnect.MainActivityFragments.ChatFragment;
 import com.example.bthconnect.MainActivityFragments.LoginFragment;
 import com.example.bthconnect.MainActivityFragments.MenuFragment;
 import com.firebase.ui.auth.AuthUI;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViewPager(){
         fragAdapter.addFragment(new LoginFragment());
         fragAdapter.addFragment(new MenuFragment());
+        fragAdapter.addFragment(new ChatFragment());
         viewPager.setAdapter((fragAdapter));
     }
 
