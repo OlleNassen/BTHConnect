@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create event"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="#42ABFC"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event name"
+        android:layout_margin="5dp"
+        android:inputType="text"
+        android:textColor="#000" />
+    <EditText
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event time"
+        android:layout_margin="5dp"
+        android:inputType="time"
+        android:textColor="#000" />
+    <EditText
+        android:id="@+id/text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event location"
+        android:layout_margin="5dp"
+        android:inputType="text"
+        android:textColor="#000" />
+
+    <Button
+        android:id="@+id/button3"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_width="137dp"
+        android:layout_height="59dp"
+        android:background="@drawable/pollbutton"
+        android:shadowColor="#02020A"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="Create poll"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

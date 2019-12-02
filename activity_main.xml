@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+        <Button
+        android:id="@+id/button"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:background="@drawable/backbutton"
+            android:shadowColor="#02020A"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+        android:text="Back" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:background="@drawable/createeventbutton"
+            android:shadowColor="#0D0D0D"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:layout_centerHorizontal ="true"
+            android:layout_marginTop="30dp"
+            android:textColor="#000000"
+            android:textSize="21sp"
+            android:text="Create event"
+            />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="189dp"
+            android:layout_height="47dp"
+            android:background="@drawable/movieplanbutton"
+            android:shadowColor="#0D0D0D"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:layout_centerHorizontal ="true"
+            android:layout_marginTop="100dp"
+            android:text="Movie plan"
+            />
+
+        <Button
+            android:id="@+id/button3"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:layout_width="189dp"
+            android:layout_height="47dp"
+            android:background="@drawable/studyroombutton"
+            android:shadowColor="#0D0D0D"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_centerHorizontal ="true"
+            android:layout_marginTop="160dp"
+            android:text="Study room" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="630dp"
+            android:text="Coming"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="285dp"
+            android:text="Not coming"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="310dp"
+            android:text="Maybe"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:layout_width="189dp"
+            android:layout_height="47dp"
+            android:background="@drawable/submitbutton"
+            android:shadowColor="#02030D"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="400dp"
+            android:text="Submit" />
+
+
+
+
+</RelativeLayout >
