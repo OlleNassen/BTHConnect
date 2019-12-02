@@ -25,7 +25,7 @@ public class EventsFragment extends Fragment{
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setViewPager(4);
+                ((MainActivity)getActivity()).setViewPager(5);
             }
         });
 
