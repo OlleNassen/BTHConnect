@@ -86,6 +86,14 @@ public class ChatFragment extends Fragment {
         });
 
         textInput = (EditText)view.findViewById(R.id.xmlChatInput);
+        textInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                post(textInput.getText().toString());
+                textInput.setText("");
+                ((MainActivity)getActivity()).hideKeyboardFrom(getContext(), view);
+            }
+        });
 
         btn_send = (Button)view.findViewById(R.id.xmlChatSend);
         btn_send.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +101,7 @@ public class ChatFragment extends Fragment {
             public void onClick(View view) {
                 post(textInput.getText().toString());
                 textInput.setText("");
+                ((MainActivity)getActivity()).hideKeyboardFrom(getContext(), view);
             }
         });
 
@@ -107,7 +116,6 @@ public class ChatFragment extends Fragment {
         return view;
     }
     void post(String input){
-        //myRef.setValue(input);
         myRef.push().setValue(((MainActivity)getActivity()).localUser.getDisplayName() + ": " + input);
     }
 

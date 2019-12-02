@@ -49,7 +49,6 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).setViewPager(4);
-
             }
         });
 

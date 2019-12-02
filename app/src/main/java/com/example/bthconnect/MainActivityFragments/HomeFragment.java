@@ -30,7 +30,6 @@ public class HomeFragment extends Fragment {
     Button btn_menu;
     Button btn_students;
     Button btn_live_chat;
-    Button btn_create_event;
 
     final int NUM_NOTIFICATION_VIEWS = 10;
     TextView textViews[] = new TextView[NUM_NOTIFICATION_VIEWS];
@@ -88,6 +87,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).setViewPager(2);
+            }
+        });
+
+        btn_students = (Button)view.findViewById(R.id.xmlHomeStudents);
+        btn_students.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(6);
             }
         });
 

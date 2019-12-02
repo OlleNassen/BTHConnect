@@ -41,29 +41,13 @@
         android:layout_marginStart="29dp"
         android:layout_marginLeft="29dp"
         android:layout_marginTop="31dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginRight="157dp"
         android:layout_marginBottom="77dp"
         android:text="@string/live_chat"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/xmlHomeCreateEvent"
-        app:layout_constraintStart_toEndOf="@+id/xmlHomeStudents"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-    <Button
-        android:id="@+id/xmlHomeCreateEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="77dp"
-        android:text="@string/create_event"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/xmlHomeLiveChat"
+        app:layout_constraintStart_toEndOf="@+id/xmlHomeStudents"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
