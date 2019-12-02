@@ -18,15 +18,15 @@
         android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:shadowColor="#0D0D0D"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="0"
-        android:layout_centerHorizontal ="true"
-        android:layout_marginTop="30dp"
+        android:text="create event"
         android:textColor="#000000"
-        android:textSize="21sp"
-        />
+        android:textSize="21sp" />
 
     <Button
         android:id="@+id/button5"
