@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.bthconnect.FragmentAdapter.FragmentAdapter;
 import com.example.bthconnect.MainActivityFragments.ChatFragment;
+import com.example.bthconnect.MainActivityFragments.HomeFragment;
 import com.example.bthconnect.MainActivityFragments.LoginFragment;
 import com.example.bthconnect.MainActivityFragments.MenuFragment;
 import com.firebase.ui.auth.AuthUI;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         fragAdapter.addFragment(new LoginFragment());
         fragAdapter.addFragment(new MenuFragment());
         fragAdapter.addFragment(new ChatFragment());
+        fragAdapter.addFragment(new HomeFragment());
         viewPager.setAdapter((fragAdapter));
     }
 

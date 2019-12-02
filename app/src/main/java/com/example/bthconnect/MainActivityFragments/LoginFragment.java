@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 import java.util.List;
@@ -73,8 +75,16 @@ public class LoginFragment extends Fragment {
 
             if(resultCode == RESULT_OK){
                 ((MainActivity)getActivity()).localUser = FirebaseAuth.getInstance().getCurrentUser();
-                Toast.makeText(getActivity(), "Welcome " + ((MainActivity)getActivity()).localUser.getDisplayName(), Toast.LENGTH_SHORT).show();
-                ((MainActivity)getActivity()).setViewPager(1);
+                if(response.isNewUser()){
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("users");
+                    myRef.push().setValue(((MainActivity)getActivity()).localUser.getDisplayName());
+                    Toast.makeText(getActivity(), "Welcome to BTH Connect: " + ((MainActivity)getActivity()).localUser.getDisplayName(), Toast.LENGTH_LONG).show();
+                }
+                else
+                    Toast.makeText(getActivity(), "Welcome Back: " + ((MainActivity)getActivity()).localUser.getDisplayName(), Toast.LENGTH_SHORT).show();
+
+                ((MainActivity)getActivity()).setViewPager(3);
             }
             else
             {

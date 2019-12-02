@@ -30,7 +30,7 @@ public class MenuFragment extends Fragment {
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setViewPager(2);
+                ((MainActivity)getActivity()).setViewPager(3);
             }
         });
 

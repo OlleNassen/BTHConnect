@@ -5,6 +5,13 @@
     <string name="connect">Connect</string>
     <string name="home">Home</string>
     <string name="events">Events</string>
+    <string name="go_back">Back</string>
+    <string name="send">Send</string>
+    <string name="menu">Menu</string>
+    <string name="live_chat">Live Chat!</string>
+    <string name="create_event">Create Event</string>
+    <string name="students">Students</string>
+    <string name="notifications">Notifications</string>
 
 
     <string name="author0">Olle</string>
