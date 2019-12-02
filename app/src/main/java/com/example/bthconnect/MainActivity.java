@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.example.bthconnect.FragmentAdapter.FragmentAdapter;
 import com.example.bthconnect.MainActivityFragments.ChatFragment;
+import com.example.bthconnect.MainActivityFragments.CreateEventFragment;
+import com.example.bthconnect.MainActivityFragments.EventsFragment;
 import com.example.bthconnect.MainActivityFragments.HomeFragment;
 import com.example.bthconnect.MainActivityFragments.LoginFragment;
 import com.example.bthconnect.MainActivityFragments.MenuFragment;
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         fragAdapter.addFragment(new MenuFragment());
         fragAdapter.addFragment(new ChatFragment());
         fragAdapter.addFragment(new HomeFragment());
+        fragAdapter.addFragment(new EventsFragment());
+        fragAdapter.addFragment(new CreateEventFragment());
+
         viewPager.setAdapter((fragAdapter));
     }
 

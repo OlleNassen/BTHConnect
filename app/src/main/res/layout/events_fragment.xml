@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/button"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:shadowColor="#02020A"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
+        android:shadowColor="#0D0D0D"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:layout_centerHorizontal ="true"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:textSize="21sp"
+        />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:shadowColor="#0D0D0D"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:layout_centerHorizontal ="true"
+        android:layout_marginTop="100dp"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:shadowColor="#0D0D0D"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:layout_centerHorizontal ="true"
+        android:layout_marginTop="160dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="630dp"
+        android:textSize="20sp"/>
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="285dp"
+        android:textSize="20sp"/>
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:shadowColor="#02030D"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp" />
+
+
+</RelativeLayout>
