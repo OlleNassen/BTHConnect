@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+        <Button
+            android:id="@+id/button"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="@string/Back"
+            android:background="@drawable/backbutton"
+            android:shadowColor="#02020A" />
+
+        <Button
+            android:id="@+id/button2"
+            android:textSize="25sp"
+
+            android:layout_width="206dp"
+            android:layout_height="60dp"
+            android:background="@drawable/createeventbutton"
+            android:shadowColor="#2D3EC4"
+            android:layout_centerHorizontal ="true"
+            android:layout_marginTop="500dp"
+            android:textColor="#1432DB"
+            android:text="@string/create_event"
+            />
+
+    <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F59B5F"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:paddingStart="150dp"
+            android:paddingEnd="0dp"
+            android:text="@string/bth_connect"
+            android:textStyle="italic"
+            android:textSize="50sp"
+            android:fontFamily="Arial"/>
+
+
+</RelativeLayout >
