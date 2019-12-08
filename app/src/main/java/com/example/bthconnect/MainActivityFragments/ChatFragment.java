@@ -91,7 +91,6 @@ public class ChatFragment extends Fragment {
             public void onClick(View view) {
                 post(textInput.getText().toString());
                 textInput.setText("");
-                ((MainActivity)getActivity()).hideKeyboardFrom(getContext(), view);
             }
         });
 

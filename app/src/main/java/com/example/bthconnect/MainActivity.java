@@ -3,6 +3,7 @@ package com.example.bthconnect;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -43,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager)findViewById(R.id.container);
         initViewPager();
         setViewPager(0);
+
+        /*
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle(textTitle)
+                .setContentText(textContent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        */
     }
 
     private void initViewPager(){
@@ -59,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setIndividualChat(String person){
         IndividualChatFragment ptr = (IndividualChatFragment)fragAdapter.getItem(7);
-        ptr.setTextField(person);
+        ptr.initializeIndividualChat(person);
     }
     public void setViewPager(int fragment){
         viewPager.setCurrentItem(fragment);
