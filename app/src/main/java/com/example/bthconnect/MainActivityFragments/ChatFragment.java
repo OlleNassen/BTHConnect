@@ -53,9 +53,36 @@ public class ChatFragment extends Fragment {
 
         initializeTextViews(view);
 
+        textInput = (EditText)view.findViewById(R.id.xmlChatInput);
+
+        btn_send = (Button)view.findViewById(R.id.xmlChatSend);
+        btn_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                post(textInput.getText().toString());
+                textInput.setText("");
+                ((MainActivity)getActivity()).hideKeyboardFrom(getContext(), view);
+            }
+        });
+
+        btn_go_back = (Button)view.findViewById(R.id.xmlChatGoBack);
+        btn_go_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(3);
+            }
+        });
+
+        return view;
+    }
+    void post(String input){
+        myRef.push().setValue(((MainActivity)getActivity()).localUser.getDisplayName() + ": " + input);
+    }
+
+    public void initializeChatFragment()
+    {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("globalChat");
-
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -83,31 +110,6 @@ public class ChatFragment extends Fragment {
 
             }
         });
-
-        textInput = (EditText)view.findViewById(R.id.xmlChatInput);
-
-        btn_send = (Button)view.findViewById(R.id.xmlChatSend);
-        btn_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                post(textInput.getText().toString());
-                textInput.setText("");
-                ((MainActivity)getActivity()).hideKeyboardFrom(getContext(), view);
-            }
-        });
-
-        btn_go_back = (Button)view.findViewById(R.id.xmlChatGoBack);
-        btn_go_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).setViewPager(3);
-            }
-        });
-
-        return view;
-    }
-    void post(String input){
-        myRef.push().setValue(((MainActivity)getActivity()).localUser.getDisplayName() + ": " + input);
     }
 
     void updateTextViews(){

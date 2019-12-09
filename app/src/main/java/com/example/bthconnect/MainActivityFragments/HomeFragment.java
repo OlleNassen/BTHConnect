@@ -88,6 +88,7 @@ public class HomeFragment extends Fragment {
         btn_live_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity)getActivity()).initChatFragment();
                 ((MainActivity)getActivity()).setViewPager(2);
             }
         });

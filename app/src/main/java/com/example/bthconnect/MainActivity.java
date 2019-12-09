@@ -96,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
         ptr.initializeSponsorFragment();
     }
 
+    public void initChatFragment(){
+        ChatFragment ptr = (ChatFragment)fragAdapter.getItem(2);
+        ptr.initializeChatFragment();
+    }
+
     public void setViewPager(int fragment){
         viewPager.setCurrentItem(fragment);
     }
