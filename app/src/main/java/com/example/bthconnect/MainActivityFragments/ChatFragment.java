@@ -117,25 +117,15 @@ public class ChatFragment extends Fragment {
     }
 
     void initializeTextViews(View view){
-        TextView tv = (TextView)view.findViewById(R.id.xmlChat0);
-        textViews[0] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat1);
-        textViews[1] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat2);
-        textViews[2] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat3);
-        textViews[3] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat4);
-        textViews[4] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat5);
-        textViews[5] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat6);
-        textViews[6] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat7);
-        textViews[7] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat8);
-        textViews[8] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat9);
-        textViews[9] = tv;
+        textViews[0] = (TextView)view.findViewById(R.id.xmlChat0);
+        textViews[1] = (TextView)view.findViewById(R.id.xmlChat1);
+        textViews[2] = (TextView)view.findViewById(R.id.xmlChat2);
+        textViews[3] = (TextView)view.findViewById(R.id.xmlChat3);
+        textViews[4] = (TextView)view.findViewById(R.id.xmlChat4);
+        textViews[5] = (TextView)view.findViewById(R.id.xmlChat5);
+        textViews[6] = (TextView)view.findViewById(R.id.xmlChat6);
+        textViews[7] = (TextView)view.findViewById(R.id.xmlChat7);
+        textViews[8] = (TextView)view.findViewById(R.id.xmlChat8);
+        textViews[9] = (TextView)view.findViewById(R.id.xmlChat9);
     }
 }

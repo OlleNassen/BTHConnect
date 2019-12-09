@@ -90,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
         IndividualChatFragment ptr = (IndividualChatFragment)fragAdapter.getItem(7);
         ptr.initializeIndividualChat(person);
     }
+
+    public void initSponsorFragment(){
+        SponsorFragment ptr = (SponsorFragment)fragAdapter.getItem(8);
+        ptr.initializeSponsorFragment();
+    }
+
     public void setViewPager(int fragment){
         viewPager.setCurrentItem(fragment);
     }

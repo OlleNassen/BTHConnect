@@ -47,37 +47,6 @@ public class SponsorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.sponsor_fragment, container, false);
 
-        sponsorList = new Vector<String>();
-
-        canBecomeSponsor = true;
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("availableSponsors");
-
-        myRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                int hashedName = dataSnapshot.getKey().hashCode();
-                int user = ((MainActivity)getActivity()).localUser.getDisplayName().toString().hashCode();
-                if(hashedName == user) // Strings cannot be compared for some reason
-                {
-                    canBecomeSponsor = false;
-                }
-                else
-                {
-                    String temp = dataSnapshot.getKey();
-                    sponsorList.add(temp);
-                }
-            }
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {}
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {}
-        });
-
         sponsorName = (TextView)view.findViewById(R.id.xmlSponsorName);
 
         btn_become_sponsor = (Button)view.findViewById(R.id.xmlBecomeSponsor);
@@ -127,8 +96,37 @@ public class SponsorFragment extends Fragment {
         return view;
     }
 
-    void initializeSponsorFragment()
+    public void initializeSponsorFragment()
     {
+        sponsorList = new Vector<String>();
 
+        canBecomeSponsor = true;
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("availableSponsors");
+
+        myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                int hashedName = dataSnapshot.getKey().hashCode();
+                int user = ((MainActivity)getActivity()).localUser.getDisplayName().toString().hashCode();
+                if(hashedName == user) // Strings cannot be compared for some reason
+                {
+                    canBecomeSponsor = false;
+                }
+                else
+                {
+                    String temp = dataSnapshot.getKey();
+                    sponsorList.add(temp);
+                }
+            }
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {}
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
+        });
     }
 }
