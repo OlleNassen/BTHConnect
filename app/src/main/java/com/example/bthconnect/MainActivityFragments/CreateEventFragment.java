@@ -22,7 +22,7 @@ public class CreateEventFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.create_event_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity1_update, container, false);
 
         //button3 = (Button) view.findViewById(R.id.button2);
         /*

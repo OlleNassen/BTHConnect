@@ -126,4 +126,9 @@ public class SponsorFragment extends Fragment {
 
         return view;
     }
+
+    void initializeSponsorFragment()
+    {
+
+    }
 }
