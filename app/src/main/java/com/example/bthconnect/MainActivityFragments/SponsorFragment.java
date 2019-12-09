@@ -25,7 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Vector;
 
 public class SponsorFragment extends Fragment {
     FirebaseDatabase database;
@@ -36,12 +40,14 @@ public class SponsorFragment extends Fragment {
     Button btn_back;
 
     TextView sponsorName;
-    List<String> listOfSponsors;
+    Vector<String> sponsorList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.sponsor_fragment, container, false);
+
+        sponsorList = new Vector<String>();
 
         canBecomeSponsor = true;
         database = FirebaseDatabase.getInstance();
@@ -50,14 +56,16 @@ public class SponsorFragment extends Fragment {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String value = dataSnapshot.getValue(String.class);
-                if(value == ((MainActivity)getActivity()).localUser.getDisplayName().toString())
+                int hashedName = dataSnapshot.getKey().hashCode();
+                int user = ((MainActivity)getActivity()).localUser.getDisplayName().toString().hashCode();
+                if(hashedName == user) // Strings cannot be compared for some reason
                 {
                     canBecomeSponsor = false;
                 }
                 else
                 {
-                    listOfSponsors.add(value);
+                    String temp = dataSnapshot.getKey();
+                    sponsorList.add(temp);
                 }
             }
             @Override
@@ -74,11 +82,15 @@ public class SponsorFragment extends Fragment {
 
         btn_become_sponsor = (Button)view.findViewById(R.id.xmlBecomeSponsor);
         btn_become_sponsor.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
                 if(canBecomeSponsor)
                 {
-                    myRef.push().setValue(((MainActivity)getActivity()).localUser.getDisplayName());
+                    myRef = database.getReference("availableSponsors/" + ((MainActivity)getActivity()).localUser.getDisplayName());
+                    myRef.setValue("Wants to be a sponsor");
+                    myRef = database.getReference("availableSponsors");
                     canBecomeSponsor = false;
                 }
             }
@@ -88,14 +100,19 @@ public class SponsorFragment extends Fragment {
         btn_get_sponsor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(listOfSponsors != null && listOfSponsors.size() > 0 && listOfSponsors.get(0) != ((MainActivity)getActivity()).localUser.getDisplayName())
+                if(sponsorList.size() > 0)
                 {
-                    sponsorName.setText(listOfSponsors.get(0));
+                    String sponsor = sponsorList.get(0);
+                    sponsorList.remove(0);
+                    sponsorName.setText(sponsor);
+                    myRef = database.getReference("availableSponsors/" + sponsor);
                     myRef.removeValue();
+                    myRef = database.getReference("availableSponsors");
                 }
                 else
+                {
                     Toast.makeText(getActivity(), "No sponsors available :(", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
