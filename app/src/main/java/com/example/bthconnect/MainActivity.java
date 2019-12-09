@@ -29,6 +29,7 @@ import com.example.bthconnect.MainActivityFragments.HomeFragment;
 import com.example.bthconnect.MainActivityFragments.IndividualChatFragment;
 import com.example.bthconnect.MainActivityFragments.LoginFragment;
 import com.example.bthconnect.MainActivityFragments.MenuFragment;
+import com.example.bthconnect.MainActivityFragments.SponsorFragment;
 import com.example.bthconnect.MainActivityFragments.StudentListFragment;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         fragAdapter.addFragment(new CreateEventFragment()); // 5
         fragAdapter.addFragment(new StudentListFragment()); // 6
         fragAdapter.addFragment(new IndividualChatFragment()); // 7
+        fragAdapter.addFragment(new SponsorFragment()); // 8
 
         viewPager.setAdapter((fragAdapter));
     }

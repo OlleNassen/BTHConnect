@@ -30,6 +30,8 @@ public class HomeFragment extends Fragment {
     Button btn_menu;
     Button btn_students;
     Button btn_live_chat;
+    Button btn_sponsor;
+
 
     final int NUM_NOTIFICATION_VIEWS = 10;
     TextView textViews[] = new TextView[NUM_NOTIFICATION_VIEWS];
@@ -95,6 +97,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).setViewPager(6);
+            }
+        });
+
+        btn_sponsor = (Button)view.findViewById(R.id.xmlHomeSponsor);
+        btn_sponsor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(8);
             }
         });
 

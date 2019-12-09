@@ -86,13 +86,6 @@ public class ChatFragment extends Fragment {
         });
 
         textInput = (EditText)view.findViewById(R.id.xmlChatInput);
-        textInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                post(textInput.getText().toString());
-                textInput.setText("");
-            }
-        });
 
         btn_send = (Button)view.findViewById(R.id.xmlChatSend);
         btn_send.setOnClickListener(new View.OnClickListener() {

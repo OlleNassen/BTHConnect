@@ -30,7 +30,9 @@ public class IndividualChatFragment extends Fragment {
     DatabaseReference myRef;
 
     TextView personTalkingTo;
-    EditText chatInput;
+    Button btn_back;
+    Button btn_send;
+    EditText textInput;
     LinearLayout linearLayout;
 
     @Nullable
@@ -41,12 +43,23 @@ public class IndividualChatFragment extends Fragment {
         linearLayout = (LinearLayout)view.findViewById(R.id.xmlIndividualLinearLayout);
 
         personTalkingTo = (TextView)view.findViewById(R.id.xmlIndividualChatPerson);
-        chatInput = (EditText)view.findViewById(R.id.xmlIndividualChatInput);
-        chatInput.setOnClickListener(new View.OnClickListener() {
+        textInput = (EditText)view.findViewById(R.id.xmlIndividualChatInput);
+
+        btn_send = (Button)view.findViewById(R.id.xmlIndividualSend);
+        btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                post(chatInput.getText().toString());
-                chatInput.setText("");
+                post(textInput.getText().toString());
+                textInput.setText("");
+                ((MainActivity)getActivity()).hideKeyboardFrom(getContext(), view);
+            }
+        });
+
+        btn_back = (Button)view.findViewById(R.id.xmlIndividualBack);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(3);
             }
         });
 
