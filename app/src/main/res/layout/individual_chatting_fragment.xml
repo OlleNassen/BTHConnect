@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -43,32 +45,16 @@
 
     <Button
         android:id="@+id/xmlIndividualSend"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:textColor="#FFFFFF"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
-        android:layout_marginBottom="135dp"
-=======
->>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
         android:text="@string/send"
-        android:background="@drawable/send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/xmlIndividualBack"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:background="@drawable/backbutton"
-        android:text="@string/Back"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/xmlIndividualScroll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-=======
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="32dp"
@@ -78,7 +64,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/xmlIndividualScroll"
         app:layout_constraintTop_toTopOf="@+id/xmlIndividualChatPerson" />
->>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
 
     <EditText
         android:id="@+id/xmlIndividualChatInput"

@@ -20,13 +20,14 @@ public class createpollfragment extends Fragment {
         View view = inflater.inflate(R.layout.activity3_update, container, false);
 
         button3 = (Button) view.findViewById(R.id.button3);
+        /*
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity) getActivity()).setViewPager(9);
             }
         });
-
+*/
         return view;
     }
 }
