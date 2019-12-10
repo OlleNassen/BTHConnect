@@ -17,7 +17,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bthconnect.DatabaseConnectivity.DatabaseController;
 import com.example.bthconnect.MainActivity;
 import com.example.bthconnect.MapsActivity;
 import com.example.bthconnect.R;

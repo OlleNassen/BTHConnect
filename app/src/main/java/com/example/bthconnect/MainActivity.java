@@ -21,6 +21,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.bthconnect.CustomViewPager.CustomViewPager;
 import com.example.bthconnect.FragmentAdapter.FragmentAdapter;
 import com.example.bthconnect.MainActivityFragments.ChatFragment;
 import com.example.bthconnect.MainActivityFragments.CreateEventFragment;
@@ -39,7 +40,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private FragmentAdapter fragAdapter;
-    private ViewPager viewPager;
+    private CustomViewPager viewPager;
     public FirebaseUser localUser; // public for convenience
     final String channelID = "MyChannelID";
     @Override
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         fragAdapter = new FragmentAdapter(getSupportFragmentManager());
-        viewPager = (ViewPager)findViewById(R.id.container);
+        viewPager = (CustomViewPager)findViewById(R.id.container);
         initViewPager();
         setViewPager(0);
 
