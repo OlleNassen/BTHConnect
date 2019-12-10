@@ -19,7 +19,7 @@ public class EventsFragment extends Fragment{
     private Button button2;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.events_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity1_update, container, false);
 
         button2 = (Button) view.findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {

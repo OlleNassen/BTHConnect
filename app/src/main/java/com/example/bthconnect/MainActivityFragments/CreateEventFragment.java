@@ -17,12 +17,12 @@ import com.example.bthconnect.R;
 import com.firebase.ui.auth.AuthUI;
 
 public class CreateEventFragment extends Fragment {
-    private Button button3;
+    private Button button2;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.create_event_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity2_update, container, false);
 
         //button3 = (Button) view.findViewById(R.id.button2);
         /*

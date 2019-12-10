@@ -8,8 +8,11 @@
 
     <Button
         android:id="@+id/xmlHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#F7F5F5"
+        android:textSize="30sp"
+        android:layout_width="205dp"
+        android:layout_height="57dp"
+        android:background="@drawable/home"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
@@ -25,8 +28,12 @@
 
     <Button
         android:id="@+id/xmlEvents"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#F7F5F5"
+        android:textSize="30sp"
+
+        android:layout_width="205dp"
+        android:layout_height="57dp"
+        android:background="@drawable/events"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
@@ -42,11 +49,14 @@
 
     <Button
         android:id="@+id/xmlSignout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#F7F5F5"
+        android:textSize="30sp"
+        android:layout_width="205dp"
+        android:layout_height="57dp"
+        android:background="@drawable/signout"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"

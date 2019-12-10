@@ -8,19 +8,21 @@
 
     <Button
         android:id="@+id/xmlChatGoBack"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="300dp"
-        android:layout_marginRight="300dp"
-        android:layout_marginBottom="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:background="@drawable/backbutton"
+        android:layout_marginBottom="0dp"
         android:text="@string/go_back"
+
         app:layout_constraintBottom_toTopOf="@+id/xmlChatSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.516"
+        android:layout_marginRight="300dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -103,11 +105,17 @@
 
     <Button
         android:id="@+id/xmlChatSend"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="96dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_width="454dp"
+        android:layout_height="47dp"
+        android:background="@drawable/send"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:layout_marginBottom="150dp"
         android:text="@string/send"
+        android:layout_centerHorizontal ="true"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

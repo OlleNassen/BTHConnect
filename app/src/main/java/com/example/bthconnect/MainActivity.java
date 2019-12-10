@@ -31,6 +31,7 @@ import com.example.bthconnect.MainActivityFragments.LoginFragment;
 import com.example.bthconnect.MainActivityFragments.MenuFragment;
 import com.example.bthconnect.MainActivityFragments.SponsorFragment;
 import com.example.bthconnect.MainActivityFragments.StudentListFragment;
+import com.example.bthconnect.MainActivityFragments.createpollfragment;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         fragAdapter.addFragment(new StudentListFragment()); // 6
         fragAdapter.addFragment(new IndividualChatFragment()); // 7
         fragAdapter.addFragment(new SponsorFragment()); // 8
+        fragAdapter.addFragment(new createpollfragment());//9
 
         viewPager.setAdapter((fragAdapter));
     }

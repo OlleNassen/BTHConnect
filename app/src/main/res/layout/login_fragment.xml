@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,30 +7,34 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/xmlTitle"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:background="#F59B5F"
+        android:textColor="#000000"
+        android:paddingLeft="300dp"
+        android:paddingRight="0dp"
+        android:text="@string/bth_connect"
+        android:textStyle="bold"
+        android:textSize="45sp"
+        android:fontFamily="Arial"
+        android:paddingEnd="0dp"
+        android:paddingStart="40dp"
+        android:layout_centerHorizontal ="true"
+        android:layout_marginTop= "200dp"/>
     <Button
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:background="@drawable/connect"
+        android:layout_width="180dp"
+        android:layout_height="47dp"
         android:id="@+id/xmlConnect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:shadowColor="#2D3EC4"
+        android:layout_centerHorizontal ="true"
+        android:layout_marginTop="500dp"
         android:text="@string/connect"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xmlTitle" />
+        />
+
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
@@ -41,4 +45,4 @@
         tools:layout_editor_absoluteX="1dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
