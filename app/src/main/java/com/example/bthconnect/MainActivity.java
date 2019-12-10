@@ -21,6 +21,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.bthconnect.CustomViewPager.CustomViewPager;
 import com.example.bthconnect.FragmentAdapter.FragmentAdapter;
 import com.example.bthconnect.MainActivityFragments.ChatFragment;
 import com.example.bthconnect.MainActivityFragments.CreateEventFragment;
@@ -40,7 +41,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private FragmentAdapter fragAdapter;
-    private ViewPager viewPager;
+    private CustomViewPager viewPager;
     public FirebaseUser localUser; // public for convenience
     final String channelID = "MyChannelID";
     @Override
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         fragAdapter = new FragmentAdapter(getSupportFragmentManager());
-        viewPager = (ViewPager)findViewById(R.id.container);
+        viewPager = (CustomViewPager)findViewById(R.id.container);
         initViewPager();
         setViewPager(0);
 
@@ -61,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
                 .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark_normal)
-                .setContentTitle("Notification")
-                .setContentText("Text Content")
+                .setContentTitle("BTHConnect - beware!")
+                .setContentText("Please do not enter any personal or sensitive information into the app.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
@@ -92,8 +93,14 @@ public class MainActivity extends AppCompatActivity {
         IndividualChatFragment ptr = (IndividualChatFragment)fragAdapter.getItem(7);
         ptr.initializeIndividualChat(person);
     }
+
+    public void initSponsorFragment(){
+        SponsorFragment ptr = (SponsorFragment)fragAdapter.getItem(8);
+        ptr.initializeSponsorFragment();
+    }
+
     public void setViewPager(int fragment){
-        viewPager.setCurrentItem(fragment);
+        viewPager.setCurrentItem(fragment, false);
     }
 
     public static void hideKeyboardFrom(Context context, View view) {

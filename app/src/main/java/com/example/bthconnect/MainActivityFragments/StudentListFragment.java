@@ -30,9 +30,7 @@ public class StudentListFragment extends Fragment {
     LinearLayout linearLayout;
     FirebaseDatabase database;
     DatabaseReference myRef;
-
-    int index = 0;
-
+    ChildEventListener childEventListener;
 
     @Nullable
     @Override
@@ -44,7 +42,12 @@ public class StudentListFragment extends Fragment {
         scrollView = view.findViewById(R.id.xmlStudentScrollView);
         linearLayout = view.findViewById(R.id.xmlStudentList);
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        if(childEventListener != null)
+        {
+            myRef.removeEventListener(childEventListener);
+        }
+
+        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 

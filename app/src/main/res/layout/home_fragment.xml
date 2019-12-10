@@ -8,18 +8,26 @@
 
     <Button
         android:id="@+id/xmlHomeMenu"
+<<<<<<< HEAD
         android:textColor="#000000"
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:background="@drawable/menu"
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+>>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
         android:text="@string/menu"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/xmlHomeStudents"
+<<<<<<< HEAD
         android:textColor="#000000"
         android:textSize="30sp"
 
@@ -27,15 +35,19 @@
         android:layout_height="47dp"
         android:background="@drawable/students"
         android:layout_marginRight="29dp"
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+>>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
         android:text="@string/students"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/xmlHomeLiveChat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         android:layout_marginEnd="29dp" />
 
     <Button
         android:id="@+id/xmlHomeLiveChat"
+<<<<<<< HEAD
         android:textColor="#000000"
         android:textSize="20sp"
         android:layout_width="150dp"
@@ -47,17 +59,21 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp"
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+>>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
         android:text="@string/live_chat"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/xmlHomeSponsor"
         app:layout_constraintStart_toEndOf="@+id/xmlHomeStudents"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
         android:id="@+id/xmlHomeNotifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:background="#000000"
         android:textColor="#FFFFFF"
         android:layout_marginTop="80dp"
@@ -70,9 +86,13 @@
         app:layout_constraintBottom_toTopOf="@+id/xmlHomeLiveChat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+=======
+        android:layout_marginTop="40dp"
+        android:text="@string/notifications"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+>>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -144,6 +164,7 @@
 
     <Button
         android:id="@+id/xmlHomeSponsor"
+<<<<<<< HEAD
         android:textColor="#F7F7F7"
         android:textSize="20sp"
         android:layout_width="180dp"
@@ -155,10 +176,15 @@
         android:layout_marginEnd="170dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="1100dp"
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+>>>>>>> 4b186c52ee173646faa3ba41eccc272c61b78729
         android:text="@string/get_sponsor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/xmlHomeLiveChat"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.298" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

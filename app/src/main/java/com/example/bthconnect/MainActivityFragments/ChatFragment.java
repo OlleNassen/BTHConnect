@@ -17,7 +17,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bthconnect.DatabaseConnectivity.DatabaseController;
 import com.example.bthconnect.MainActivity;
 import com.example.bthconnect.MapsActivity;
 import com.example.bthconnect.R;
@@ -39,6 +38,7 @@ import static com.firebase.ui.auth.AuthUI.TAG;
 public class ChatFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
+    ChildEventListener childEventListener;
     final int NUM_TEXT_VIEWS = 10;
     TextView textViews[] = new TextView[NUM_TEXT_VIEWS];
     int textViewOffset = 0;
@@ -51,12 +51,15 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.chat_fragment, container, false);
 
-        initializeTextViews(view);
-
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("globalChat");
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        if(childEventListener != null) // Stupid solution but works. Program will end up having multiple childEventListenrs to the same reference otherwise and onChildAdded call will be called multiple times.
+        {
+            myRef.removeEventListener(childEventListener);
+        }
+
+        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String value = dataSnapshot.getValue(String.class);
@@ -66,7 +69,6 @@ public class ChatFragment extends Fragment {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
@@ -84,6 +86,8 @@ public class ChatFragment extends Fragment {
 
             }
         });
+
+        initializeTextViews(view);
 
         textInput = (EditText)view.findViewById(R.id.xmlChatInput);
 
@@ -118,25 +122,15 @@ public class ChatFragment extends Fragment {
     }
 
     void initializeTextViews(View view){
-        TextView tv = (TextView)view.findViewById(R.id.xmlChat0);
-        textViews[0] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat1);
-        textViews[1] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat2);
-        textViews[2] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat3);
-        textViews[3] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat4);
-        textViews[4] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat5);
-        textViews[5] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat6);
-        textViews[6] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat7);
-        textViews[7] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat8);
-        textViews[8] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlChat9);
-        textViews[9] = tv;
+        textViews[0] = (TextView)view.findViewById(R.id.xmlChat0);
+        textViews[1] = (TextView)view.findViewById(R.id.xmlChat1);
+        textViews[2] = (TextView)view.findViewById(R.id.xmlChat2);
+        textViews[3] = (TextView)view.findViewById(R.id.xmlChat3);
+        textViews[4] = (TextView)view.findViewById(R.id.xmlChat4);
+        textViews[5] = (TextView)view.findViewById(R.id.xmlChat5);
+        textViews[6] = (TextView)view.findViewById(R.id.xmlChat6);
+        textViews[7] = (TextView)view.findViewById(R.id.xmlChat7);
+        textViews[8] = (TextView)view.findViewById(R.id.xmlChat8);
+        textViews[9] = (TextView)view.findViewById(R.id.xmlChat9);
     }
 }

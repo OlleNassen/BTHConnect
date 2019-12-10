@@ -27,11 +27,11 @@ public class HomeFragment extends Fragment {
 
     FirebaseDatabase database;
     DatabaseReference myRef;
+    ChildEventListener childEventListener;
     Button btn_menu;
     Button btn_students;
     Button btn_live_chat;
     Button btn_sponsor;
-
 
     final int NUM_NOTIFICATION_VIEWS = 10;
     TextView textViews[] = new TextView[NUM_NOTIFICATION_VIEWS];
@@ -43,11 +43,15 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
 
         initializeTextViews(view);
-
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        if(childEventListener != null)
+        {
+            myRef.removeEventListener(childEventListener);
+        }
+
+        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String value = dataSnapshot.getValue(String.class);
@@ -104,6 +108,7 @@ public class HomeFragment extends Fragment {
         btn_sponsor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity)getActivity()).initSponsorFragment();
                 ((MainActivity)getActivity()).setViewPager(8);
             }
         });
@@ -118,25 +123,15 @@ public class HomeFragment extends Fragment {
     }
 
     void initializeTextViews(View view){
-        TextView tv = (TextView)view.findViewById(R.id.xmlHomeNotification0);
-        textViews[0] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification1);
-        textViews[1] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification2);
-        textViews[2] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification3);
-        textViews[3] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification4);
-        textViews[4] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification5);
-        textViews[5] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification6);
-        textViews[6] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification7);
-        textViews[7] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification8);
-        textViews[8] = tv;
-        tv = (TextView)view.findViewById(R.id.xmlHomeNotification9);
-        textViews[9] = tv;
+        textViews[0] = (TextView)view.findViewById(R.id.xmlHomeNotification0);
+        textViews[1] = (TextView)view.findViewById(R.id.xmlHomeNotification1);
+        textViews[2] = (TextView)view.findViewById(R.id.xmlHomeNotification2);
+        textViews[3] = (TextView)view.findViewById(R.id.xmlHomeNotification3);
+        textViews[4] = (TextView)view.findViewById(R.id.xmlHomeNotification4);
+        textViews[5] = (TextView)view.findViewById(R.id.xmlHomeNotification5);
+        textViews[6] = (TextView)view.findViewById(R.id.xmlHomeNotification6);
+        textViews[7] = (TextView)view.findViewById(R.id.xmlHomeNotification7);
+        textViews[8] = (TextView)view.findViewById(R.id.xmlHomeNotification8);
+        textViews[9] = (TextView)view.findViewById(R.id.xmlHomeNotification9);
     }
 }
