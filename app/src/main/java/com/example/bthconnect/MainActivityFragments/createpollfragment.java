@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.bthconnect.MainActivity;
 import com.example.bthconnect.R;
 
 public class createpollfragment extends Fragment {
@@ -19,7 +18,7 @@ public class createpollfragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity3_update, container, false);
 
-        button3 = (Button) view.findViewById(R.id.button3);
+        button3 = (Button) view.findViewById(R.id.activity2_create_poll);
         /*
         button3.setOnClickListener(new View.OnClickListener() {
             @Override

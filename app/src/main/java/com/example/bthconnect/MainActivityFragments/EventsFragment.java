@@ -16,13 +16,22 @@ import com.example.bthconnect.R;
 
 public class EventsFragment extends Fragment{
 
-    private Button button2;
+    private Button backBtn;
+    Button createEventBtn;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity1_update, container, false);
 
-        button2 = (Button) view.findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        backBtn = (Button) view.findViewById(R.id.activity1_back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(3);
+            }
+        });
+
+        createEventBtn = (Button) view.findViewById(R.id.create_event);
+        createEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).setViewPager(5);
