@@ -39,16 +39,12 @@ public class SponsorFragment extends Fragment {
     Button btn_become_sponsor;
     Button btn_get_sponsor;
     Button btn_back;
-
-    TextView sponsorName;
     Vector<String> sponsorList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.sponsor_fragment, container, false);
-
-        sponsorName = (TextView)view.findViewById(R.id.xmlSponsorName);
 
         btn_become_sponsor = (Button)view.findViewById(R.id.xmlBecomeSponsor);
         btn_become_sponsor.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +58,11 @@ public class SponsorFragment extends Fragment {
                     myRef.setValue("Wants to be a sponsor");
                     myRef = database.getReference("availableSponsors");
                     canBecomeSponsor = false;
+                    Toast.makeText(getActivity(), "You are now signed up for the sponsorship program!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "You have already signed up to be a sponsor!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -74,10 +75,21 @@ public class SponsorFragment extends Fragment {
                 {
                     String sponsor = sponsorList.get(0);
                     sponsorList.remove(0);
-                    sponsorName.setText(sponsor);
+
                     myRef = database.getReference("availableSponsors/" + sponsor);
                     myRef.removeValue();
                     myRef = database.getReference("availableSponsors");
+
+                    //TODO MOVE THIS
+                    int hash0 = sponsor.hashCode();
+                    int hash1 = ((MainActivity)getActivity()).localUser.getDisplayName().hashCode();
+                    int combinedHash = hash0 + hash1;
+                    myRef = database.getReference("privateMessages/" + combinedHash);
+
+                    myRef.push().setValue(sponsor + " has become a sponsor to " + ((MainActivity)getActivity()).localUser.getDisplayName() + ".");
+
+                    ((MainActivity)getActivity()).setIndividualChat(sponsor);
+                    ((MainActivity)getActivity()).setViewPager(7);
                 }
                 else
                 {

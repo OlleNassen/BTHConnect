@@ -12,13 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
         android:layout_marginLeft="123dp"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="256dp"
         android:layout_marginEnd="123dp"
         android:layout_marginRight="123dp"
-        android:layout_marginBottom="265dp"
         android:text="@string/become_sponsor"
-        app:layout_constraintBottom_toTopOf="@+id/xmlGetSponsor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,15 +25,10 @@
         android:id="@+id/xmlGetSponsor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginLeft="139dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="138dp"
-        android:layout_marginRight="138dp"
         android:text="@string/get_sponsor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/xmlBecomeSponsor"
+        app:layout_constraintStart_toStartOf="@+id/xmlBecomeSponsor"
         app:layout_constraintTop_toBottomOf="@+id/xmlBecomeSponsor" />
 
     <Button
@@ -43,32 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="311dp"
-        android:layout_marginRight="311dp"
         android:layout_marginBottom="32dp"
         android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toStartOf="@+id/xmlBecomeSponsor"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011" />
-
-    <TextView
-        android:id="@+id/xmlSponsorName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="181dp"
-        android:layout_marginLeft="181dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="174dp"
-        android:layout_marginRight="174dp"
-        android:layout_marginBottom="178dp"
-        android:text="potentialSponsorName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xmlGetSponsor" />
+        app:layout_constraintVertical_bias="0.053" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

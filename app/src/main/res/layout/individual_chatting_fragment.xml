@@ -12,10 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="ThisShouldNotBeHere"
+        app:layout_constraintBottom_toTopOf="@+id/xmlIndividualScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,9 +27,10 @@
         android:layout_height="500dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/xmlIndividualSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,13 +47,9 @@
         android:id="@+id/xmlIndividualSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
-        android:layout_marginBottom="135dp"
         android:text="@string/send"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xmlIndividualScroll" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/xmlIndividualBack"
@@ -59,28 +57,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:text="@string/Back"
+        android:layout_marginTop="32dp"
+        android:text="@string/home"
         app:layout_constraintBottom_toTopOf="@+id/xmlIndividualScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/xmlIndividualScroll"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/xmlIndividualChatPerson" />
 
     <EditText
         android:id="@+id/xmlIndividualChatInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="264dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginEnd="38dp"
         android:layout_marginRight="38dp"
-        android:layout_marginBottom="134dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/xmlIndividualSend"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xmlIndividualScroll" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
