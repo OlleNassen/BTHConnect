@@ -29,6 +29,7 @@ public class IndividualChatFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
 
+    ChildEventListener childEventListener;
     TextView personTalkingTo;
     Button btn_back;
     Button btn_send;
@@ -77,7 +78,12 @@ public class IndividualChatFragment extends Fragment {
         int combinedHash = hash0 + hash1;
         myRef = database.getReference("privateMessages/" + combinedHash);
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        if(childEventListener != null)
+        {
+            myRef.removeEventListener(childEventListener);
+        }
+
+        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String value = dataSnapshot.getValue(String.class);

@@ -39,6 +39,7 @@ import static com.firebase.ui.auth.AuthUI.TAG;
 public class ChatFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
+    ChildEventListener childEventListener;
     final int NUM_TEXT_VIEWS = 10;
     TextView textViews[] = new TextView[NUM_TEXT_VIEWS];
     int textViewOffset = 0;
@@ -50,6 +51,42 @@ public class ChatFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.chat_fragment, container, false);
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("globalChat");
+
+        if(childEventListener != null) // Stupid solution but works. Program will end up having multiple childEventListenrs to the same reference otherwise and onChildAdded call will be called multiple times.
+        {
+            myRef.removeEventListener(childEventListener);
+        }
+
+        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                String value = dataSnapshot.getValue(String.class);
+                updateTextViews();
+                textViews[NUM_TEXT_VIEWS - 1].setText(value);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         initializeTextViews(view);
 
@@ -77,39 +114,6 @@ public class ChatFragment extends Fragment {
     }
     void post(String input){
         myRef.push().setValue(((MainActivity)getActivity()).localUser.getDisplayName() + ": " + input);
-    }
-
-    public void initializeChatFragment()
-    {
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("globalChat");
-        myRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String value = dataSnapshot.getValue(String.class);
-                updateTextViews();
-                textViews[NUM_TEXT_VIEWS - 1].setText(value);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
     void updateTextViews(){

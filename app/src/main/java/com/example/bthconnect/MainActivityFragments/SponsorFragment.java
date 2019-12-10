@@ -34,6 +34,7 @@ import java.util.Vector;
 public class SponsorFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
+    ChildEventListener childEventListener;
     private boolean canBecomeSponsor;
     Button btn_become_sponsor;
     Button btn_get_sponsor;
@@ -104,7 +105,12 @@ public class SponsorFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("availableSponsors");
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        if(childEventListener != null)
+        {
+            myRef.removeEventListener(childEventListener);
+        }
+
+        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 int hashedName = dataSnapshot.getKey().hashCode();
