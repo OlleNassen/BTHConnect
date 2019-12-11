@@ -20,6 +20,7 @@ public class MenuFragment extends Fragment {
     Button btn_home;
     Button btn_events;
     Button btn_signOut;
+    Button back_btn_menu;
 
     @Nullable
     @Override
@@ -49,6 +50,13 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).setViewPager(4);
+            }
+        });
+        back_btn_menu = (Button)view.findViewById(R.id.main_menu);
+        back_btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(3);
             }
         });
 

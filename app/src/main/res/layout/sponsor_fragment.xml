@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,6 +13,7 @@
         android:layout_marginTop="256dp"
         android:layout_marginEnd="123dp"
         android:layout_marginRight="123dp"
+        android:background="#00FF0D"
         android:text="@string/become_sponsor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,6 +24,7 @@
         android:id="@+id/xmlGetSponsor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00FF0B"
         android:text="@string/get_sponsor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/xmlBecomeSponsor"
@@ -35,15 +35,15 @@
         android:id="@+id/xmlSponsorBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginBottom="32dp"
         android:text="@string/Back"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/backbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/xmlBecomeSponsor"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
