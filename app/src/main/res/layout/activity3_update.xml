@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
     <Button
-        android:id="@+id/activity3_back"
+        android:id="@+id/activity2_back"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:layout_width="100dp"
@@ -76,14 +76,16 @@
             android:hint="@string/event_location"
             android:layout_margin="5dp"
             android:inputType="text"
-            android:textColor="#000">
+            android:textColor="#000"/>
+
         <EditText
-            android:id="@+id/Text4"
+            android:id="@+id/text4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/event_date"
             android:layout_margin="5dp"
-            android:inputType="date" /></EditText>
+            android:hint="@string/event_date"
+            android:inputType="date"
+            android:textColor="#000" />
 
         <RadioGroup
             android:layout_width="match_parent"

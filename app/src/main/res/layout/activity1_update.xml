@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
         <Button
-            android:id="@+id/activity3_back"
+            android:id="@+id/activity2_back"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:layout_width="100dp"

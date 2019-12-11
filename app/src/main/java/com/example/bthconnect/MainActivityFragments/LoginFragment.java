@@ -64,7 +64,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void showSignInOptions(){
-        startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(), MY_REQUEST_CODE);
+        startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setIsSmartLockEnabled(false).setAvailableProviders(providers).build(), MY_REQUEST_CODE);
     }
 
     @Override
