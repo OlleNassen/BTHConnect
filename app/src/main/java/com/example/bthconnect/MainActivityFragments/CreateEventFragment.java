@@ -43,34 +43,14 @@ public class CreateEventFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("events");
 
-        if(childEventListener != null)
-        {
-            myRef.removeEventListener(childEventListener);
-        }
-
-        childEventListener = myRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {}
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {}
-        });
-
         backBtn = (Button)view.findViewById(R.id.activity2_back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).setViewPager(4);
-
             }
         });
+
         btn_createPoll = (Button)view.findViewById(R.id.activity2_create_poll);
         btn_createPoll.setOnClickListener(new View.OnClickListener() {
             @Override

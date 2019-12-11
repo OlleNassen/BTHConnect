@@ -2,44 +2,59 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
-        <Button
-            android:id="@+id/activity1_back"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:text="@string/Back"
-            android:background="@drawable/backbutton"
-            android:shadowColor="#02020A" />
 
-        <Button
-            android:id="@+id/activity1_create_event"
-            android:textSize="25sp"
-            android:layout_width="206dp"
-            android:layout_height="60dp"
-            android:background="@drawable/createeventbutton"
-            android:shadowColor="#2D3EC4"
-            android:layout_centerHorizontal ="true"
-            android:layout_marginTop="400dp"
-            android:textColor="#1432DB"
-            android:text="@string/create_event"
-            />
+    <Button
+        android:id="@+id/activity1_back"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@drawable/backbutton"
+        android:shadowColor="#02020A"
+        android:text="@string/Back"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/activity1_create_event"
+        android:layout_width="206dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:background="@drawable/createeventbutton"
+        android:shadowColor="#2D3EC4"
+        android:text="@string/create_event"
+        android:textColor="#1432DB"
+        android:textSize="25sp" />
 
     <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#F59B5F"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:paddingStart="150dp"
-            android:paddingEnd="0dp"
-            android:text="@string/bth_connect"
-            android:textStyle="italic"
-            android:textSize="50sp"
-            android:fontFamily="Arial"/>
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F59B5F"
+        android:fontFamily="Arial"
+        android:gravity="center"
+        android:paddingStart="150dp"
+        android:paddingEnd="0dp"
+        android:text="@string/bth_connect"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:id="@+id/xmlActivity1Linear"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"></LinearLayout>
 
 
-</RelativeLayout >
+</RelativeLayout>

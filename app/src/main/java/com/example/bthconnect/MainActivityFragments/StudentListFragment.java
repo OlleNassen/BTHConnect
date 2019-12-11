@@ -1,5 +1,6 @@
 package com.example.bthconnect.MainActivityFragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -36,6 +37,8 @@ public class StudentListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.student_list_fragment, container, false);
+        final Context context = getContext();
+        if(context == null)return view;
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
@@ -52,7 +55,7 @@ public class StudentListFragment extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
                 final String value = dataSnapshot.getValue(String.class);
-                Button button = new Button(getContext());
+                Button button = new Button(context);
                 button.setText(value);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
