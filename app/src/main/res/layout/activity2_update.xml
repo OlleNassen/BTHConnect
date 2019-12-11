@@ -75,15 +75,6 @@
             android:textColor="#000" />
 
         <EditText
-            android:id="@+id/xmlEventLocation2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:hint="@string/event_location"
-            android:inputType="text"
-            android:textColor="#000" />
-
-        <EditText
             android:id="@+id/xmlEventDate2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +82,15 @@
             android:ems="10"
             android:hint="@string/event_date"
             android:inputType="date"
+            android:textColor="#000" />
+
+        <EditText
+            android:id="@+id/xmlEventLocation2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="@string/event_location"
+            android:inputType="text"
             android:textColor="#000" />
 
 

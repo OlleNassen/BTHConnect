@@ -1,12 +1,8 @@
 package com.example.bthconnect;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.app.NotificationChannel;
@@ -18,8 +14,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.bthconnect.CustomViewPager.CustomViewPager;
 import com.example.bthconnect.FragmentAdapter.FragmentAdapter;
@@ -32,11 +26,8 @@ import com.example.bthconnect.MainActivityFragments.LoginFragment;
 import com.example.bthconnect.MainActivityFragments.MenuFragment;
 import com.example.bthconnect.MainActivityFragments.SponsorFragment;
 import com.example.bthconnect.MainActivityFragments.StudentListFragment;
-import com.example.bthconnect.MainActivityFragments.createpollfragment;
+import com.example.bthconnect.MainActivityFragments.PollVoteFragment;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -85,10 +76,16 @@ public class MainActivity extends AppCompatActivity {
         fragAdapter.addFragment(new StudentListFragment()); // 6
         fragAdapter.addFragment(new IndividualChatFragment()); // 7
         fragAdapter.addFragment(new SponsorFragment()); // 8
-        fragAdapter.addFragment(new createpollfragment());//9
+        fragAdapter.addFragment(new PollVoteFragment());//9
 
         viewPager.setAdapter((fragAdapter));
     }
+
+    public void initPollVoteFragment(String id, String name, String time, String date, String loc){
+        PollVoteFragment ptr = (PollVoteFragment)fragAdapter.getItem(9);
+        ptr.initPollFragment(id, name, time, date, loc);
+    }
+
     public void setIndividualChat(String person){
         IndividualChatFragment ptr = (IndividualChatFragment)fragAdapter.getItem(7);
         ptr.initializeIndividualChat(person);

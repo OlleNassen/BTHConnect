@@ -51,41 +51,29 @@
         android:paddingTop="125dp"
         android:gravity="center_horizontal">
 
-        <EditText
-            android:id="@+id/text1"
+        <TextView
+            android:id="@+id/xmlActivity3Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="100dp"
-            android:hint="@string/event_name"
-            android:inputType="text"
-            android:textColor="#000"
-            android:layout_marginLeft="100dp" />
-        <EditText
-            android:id="@+id/text2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/event_time"
-            android:layout_margin="5dp"
-            android:inputType="time"
-            android:textColor="#000" />
-        <EditText
-            android:id="@+id/text3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/event_location"
-            android:layout_margin="5dp"
-            android:inputType="text"
-            android:textColor="#000"/>
+            android:text="@string/event_name" />
 
-        <EditText
-            android:id="@+id/text4"
+        <TextView
+            android:id="@+id/xmlActivity3Time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:hint="@string/event_date"
-            android:inputType="date"
-            android:textColor="#000" />
+            android:text="@string/event_time" />
+
+        <TextView
+            android:id="@+id/xmlActivity3Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_date" />
+
+        <TextView
+            android:id="@+id/xmlActivity3Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_loc" />
 
         <RadioGroup
             android:layout_width="match_parent"
