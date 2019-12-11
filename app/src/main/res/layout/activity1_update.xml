@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
         <Button
-            android:id="@+id/activity2_back"
+            android:id="@+id/activity1_back"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:layout_width="100dp"
@@ -15,7 +15,7 @@
             android:shadowColor="#02020A" />
 
         <Button
-            android:id="@+id/create_event"
+            android:id="@+id/activity1_create_event"
             android:textSize="25sp"
             android:layout_width="206dp"
             android:layout_height="60dp"

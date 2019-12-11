@@ -20,7 +20,7 @@ public class EventsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity1_update, container, false);
 
-        backBtn = (Button) view.findViewById(R.id.activity2_back);
+        backBtn = (Button) view.findViewById(R.id.activity1_back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,7 +28,7 @@ public class EventsFragment extends Fragment{
             }
         });
 
-        createEventBtn = (Button) view.findViewById(R.id.create_event);
+        createEventBtn = (Button) view.findViewById(R.id.activity1_create_event);
         createEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -4,15 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
+
     <Button
         android:id="@+id/activity2_back"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:text="@string/back"
         android:background="@drawable/backbutton"
-        android:shadowColor="#02020A" />
+        android:shadowColor="#02020A"
+        android:text="@string/back"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView2"
