@@ -55,40 +55,41 @@
         android:gravity="center_horizontal">
 
         <EditText
-            android:id="@+id/text1"
+            android:id="@+id/xmlEventName2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
             android:hint="@string/event_name"
             android:inputType="text"
-            android:textColor="#000"
-            android:layout_marginLeft="100dp" />
+            android:textColor="#000" />
 
         <EditText
-            android:id="@+id/text2"
+            android:id="@+id/xmlEventTime2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/event_time"
             android:layout_margin="5dp"
+            android:hint="@string/event_time"
             android:inputType="time"
             android:textColor="#000" />
+
         <EditText
-            android:id="@+id/text3"
+            android:id="@+id/xmlEventLocation2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/event_location"
             android:layout_margin="5dp"
+            android:hint="@string/event_location"
             android:inputType="text"
             android:textColor="#000" />
 
         <EditText
-            android:id="@+id/Text4"
+            android:id="@+id/xmlEventDate2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:ems="10"
             android:hint="@string/event_date"
-            android:layout_margin="5dp"
             android:inputType="date"
             android:textColor="#000" />
 
