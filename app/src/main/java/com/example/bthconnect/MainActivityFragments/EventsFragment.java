@@ -21,20 +21,42 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Vector;
+
 public class EventsFragment extends Fragment{
     FirebaseDatabase database;
     DatabaseReference myRef;
 
     ChildEventListener childEventListener;
+
     private Button backBtn;
     Button createEventBtn;
     LinearLayout linearLayout;
+    Vector<String> idList = new Vector<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity1_update, container, false);
         final Context context = getContext();
         if(context == null)return view;
 
+        linearLayout = (LinearLayout) view.findViewById(R.id.xmlActivity1Linear);
+
+        backBtn = (Button) view.findViewById(R.id.activity1_back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(3);
+            }
+        });
+
+        createEventBtn = (Button) view.findViewById(R.id.activity1_create_event);
+        createEventBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(5);
+            }
+        });
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("events");
@@ -54,7 +76,6 @@ public class EventsFragment extends Fragment{
                 final String eventLocation = dataSnapshot.child("event_location").getValue(String.class);
 
                 Button eventBtn = new Button(context);
-                eventBtn.setText(eventName);
                 eventBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -62,7 +83,9 @@ public class EventsFragment extends Fragment{
                         ((MainActivity)getActivity()).setViewPager(9);
                     }
                 });
+                eventBtn.setText(eventName);
                 linearLayout.addView(eventBtn);
+                idList.add(id);
             }
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
@@ -72,24 +95,6 @@ public class EventsFragment extends Fragment{
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}
-        });
-
-        linearLayout = (LinearLayout) view.findViewById(R.id.xmlActivity1Linear);
-
-        backBtn = (Button) view.findViewById(R.id.activity1_back);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).setViewPager(3);
-            }
-        });
-
-        createEventBtn = (Button) view.findViewById(R.id.activity1_create_event);
-        createEventBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).setViewPager(5);
-            }
         });
 
         return view;
