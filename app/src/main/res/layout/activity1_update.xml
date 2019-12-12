@@ -58,49 +58,49 @@
             android:id="@+id/act1button0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
 
         <Button
             android:id="@+id/act1button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_name" />
+            android:text="no scheduled event" />
     </LinearLayout>
 
 

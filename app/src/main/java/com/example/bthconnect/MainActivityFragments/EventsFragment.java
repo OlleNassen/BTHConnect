@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Vector;
 
@@ -33,7 +34,8 @@ public class EventsFragment extends Fragment{
     private Button backBtn;
     Button createEventBtn;
     LinearLayout linearLayout;
-    Vector<String> idList = new Vector<>();
+    String[] idList = new String[8];
+    ValueEventListener[] valueEventListeners = new ValueEventListener[8];
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -107,8 +109,8 @@ public class EventsFragment extends Fragment{
                         ((MainActivity)getActivity()).setViewPager(9);
                     }
                 });
+                idList[index] = id;
                 eventButtons[index++].setText(eventName);
-                idList.add(id);
             }
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
@@ -119,6 +121,41 @@ public class EventsFragment extends Fragment{
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
+    }
+
+    public void initChildListeners(){
+        database = FirebaseDatabase.getInstance();
+
+        for(int i = 0; i < 8; ++i)
+        {
+            final int indexCopy = i;
+
+            if(idList[i] != null)
+            {
+                myRef = database.getReference(idList[i]);
+
+                if(valueEventListeners[i] != null)
+                {
+                    myRef.removeEventListener(valueEventListeners[i]);
+                }
+
+                // Attach a listener to read the data at our posts reference
+                valueEventListeners[i] = myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        int numChildren = (int)dataSnapshot.getChildrenCount();
+                        eventButtons[indexCopy].setText(eventButtons[indexCopy].getText() + ", participants: " + Integer.toString(numChildren));
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        System.out.println("The read failed: " + databaseError.getCode());
+                    }
+                });
+
+            }
+        }
+
 
     }
 }

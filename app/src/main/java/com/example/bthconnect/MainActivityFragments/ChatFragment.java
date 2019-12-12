@@ -1,39 +1,24 @@
 package com.example.bthconnect.MainActivityFragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bthconnect.MainActivity;
-import com.example.bthconnect.MapsActivity;
 import com.example.bthconnect.R;
-import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ServerValue;
-import com.google.firebase.database.ValueEventListener;
-
-import java.security.Timestamp;
-import java.util.List;
-import java.util.Queue;
-
-import static com.firebase.ui.auth.AuthUI.TAG;
 
 public class ChatFragment extends Fragment {
     FirebaseDatabase database;
