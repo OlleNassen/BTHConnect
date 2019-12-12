@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static android.view.Gravity.BOTTOM;
+import static android.view.Gravity.TOP;
+
 public class IndividualChatFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
@@ -31,6 +35,7 @@ public class IndividualChatFragment extends Fragment {
     Button btn_send;
     EditText textInput;
     LinearLayout linearLayout;
+    ScrollView scrollView;
     Button back_but_;
 
     @Nullable
@@ -38,15 +43,8 @@ public class IndividualChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.individual_chatting_fragment, container, false);
 
-        back_but_ = (Button)view.findViewById(R.id.individual_activity_back);
-        back_but_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).setViewPager(6);
-            }
-        });
-
         linearLayout = (LinearLayout)view.findViewById(R.id.xmlIndividualLinearLayout);
+        scrollView = (ScrollView)view.findViewById(R.id.xmlIndividualScroll);
 
         personTalkingTo = (TextView)view.findViewById(R.id.xmlIndividualChatPerson);
         textInput = (EditText)view.findViewById(R.id.xmlIndividualChatInput);
@@ -117,5 +115,6 @@ public class IndividualChatFragment extends Fragment {
 
             }
         });
+
     }
 }

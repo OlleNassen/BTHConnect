@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/xmlIndividualBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/becomesponser"
+        android:text="@string/home"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/xmlIndividualChatPerson"
         android:layout_width="wrap_content"
@@ -14,30 +24,32 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="ThisShouldNotBeHere"
-        app:layout_constraintBottom_toTopOf="@+id/xmlIndividualScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/individual_activity_back" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/xmlIndividualScroll"
         android:layout_width="409dp"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toTopOf="@+id/xmlIndividualSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/individual_activity_back">
+        app:layout_constraintTop_toBottomOf="@+id/xmlIndividualChatPerson">
 
         <LinearLayout
             android:id="@+id/xmlIndividualLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+        </LinearLayout>
     </ScrollView>
 
     <Button
@@ -49,19 +61,6 @@
         android:background="@drawable/becomesponser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/xmlIndividualBack"
-        android:textColor="#FFFFFF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/becomesponser"
-        android:text="@string/home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/xmlIndividualScroll"
-        app:layout_constraintTop_toTopOf="@+id/individual_activity_back" />
 
     <EditText
         android:id="@+id/xmlIndividualChatInput"
@@ -77,16 +76,5 @@
         app:layout_constraintEnd_toStartOf="@+id/xmlIndividualSend"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/individual_activity_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/backbutton"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="4dp"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
