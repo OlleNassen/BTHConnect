@@ -49,6 +49,7 @@ public class MenuFragment extends Fragment {
         btn_events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity)getActivity()).initEventsFragment();
                 ((MainActivity)getActivity()).setViewPager(4);
             }
         });

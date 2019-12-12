@@ -26,9 +26,10 @@ import java.util.Vector;
 public class EventsFragment extends Fragment{
     FirebaseDatabase database;
     DatabaseReference myRef;
-
     ChildEventListener childEventListener;
 
+    private int index = 0;
+    private Button[] eventButtons = new Button[8];
     private Button backBtn;
     Button createEventBtn;
     LinearLayout linearLayout;
@@ -58,6 +59,28 @@ public class EventsFragment extends Fragment{
             }
         });
 
+        initializeButtons(view);
+
+
+
+
+        return view;
+    }
+
+    void initializeButtons(View view){
+        eventButtons[0] = (Button)view.findViewById(R.id.act1button0);
+        eventButtons[1] = (Button)view.findViewById(R.id.act1button1);
+        eventButtons[2] = (Button)view.findViewById(R.id.act1button2);
+        eventButtons[3] = (Button)view.findViewById(R.id.act1button3);
+        eventButtons[4] = (Button)view.findViewById(R.id.act1button4);
+        eventButtons[5] = (Button)view.findViewById(R.id.act1button5);
+        eventButtons[6] = (Button)view.findViewById(R.id.act1button6);
+        eventButtons[7] = (Button)view.findViewById(R.id.act1button7);
+    }
+
+    public void initEventsFragment(){
+        index = 0;
+
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("events");
 
@@ -75,16 +98,16 @@ public class EventsFragment extends Fragment{
                 final String eventDate = dataSnapshot.child("event_date").getValue(String.class);
                 final String eventLocation = dataSnapshot.child("event_location").getValue(String.class);
 
-                Button eventBtn = new Button(context);
-                eventBtn.setOnClickListener(new View.OnClickListener() {
+                if(index > 7)index = 0;
+
+                eventButtons[index].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         ((MainActivity)getActivity()).initPollVoteFragment(id, eventName, eventTime, eventDate, eventLocation);
                         ((MainActivity)getActivity()).setViewPager(9);
                     }
                 });
-                eventBtn.setText(eventName);
-                linearLayout.addView(eventBtn);
+                eventButtons[index++].setText(eventName);
                 idList.add(id);
             }
             @Override
@@ -97,7 +120,5 @@ public class EventsFragment extends Fragment{
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
 
-        return view;
     }
 }
-
