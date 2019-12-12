@@ -1,6 +1,7 @@
 package com.example.bthconnect.MainActivityFragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +62,8 @@ public class StudentListFragment extends Fragment {
                 final String value = dataSnapshot.getValue(String.class);
                 Button button = new Button(context);
                 button.setText(value);
+                button.setBackgroundResource(R.drawable.becomesponser);
+                button.setTextColor(Color.parseColor("#ffffff"));
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

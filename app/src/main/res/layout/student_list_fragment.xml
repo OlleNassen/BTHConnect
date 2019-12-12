@@ -12,8 +12,8 @@
 
         <Button
             android:id="@+id/student_list_back"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/backbutton"
             android:shadowColor="#02020A"
             android:text="@string/back"

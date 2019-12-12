@@ -46,16 +46,17 @@
         android:layout_height="wrap_content"
         android:text="@string/send"
         android:textColor="#FFFFFF"
-        android:background="@drawable/send"
+        android:background="@drawable/becomesponser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/xmlIndividualBack"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="#F30D58"
+        android:background="@drawable/becomesponser"
         android:text="@string/home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

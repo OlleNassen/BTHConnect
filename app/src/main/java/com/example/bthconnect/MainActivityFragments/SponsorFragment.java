@@ -48,11 +48,11 @@ public class SponsorFragment extends Fragment {
                     myRef.setValue("Wants to be a sponsor");
                     myRef = database.getReference("availableSponsors");
                     canBecomeSponsor = false;
-                    Toast.makeText(getActivity(), "You are now signed up for the sponsorship program!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "You have now signed up for the sponsorship program", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(getActivity(), "You have already signed up to be a sponsor!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "You have already signed up to be a sponsor", Toast.LENGTH_SHORT).show();
                 }
             }
         });

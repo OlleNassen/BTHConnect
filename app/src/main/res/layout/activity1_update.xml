@@ -7,8 +7,12 @@
 
     <Button
         android:id="@+id/activity1_back"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-7dp"
         android:background="@drawable/backbutton"
         android:shadowColor="#02020A"
         android:text="@string/Back"
@@ -28,79 +32,94 @@
         android:layout_marginLeft="116dp"
         android:layout_marginEnd="89dp"
         android:layout_marginRight="89dp"
-        android:background="@drawable/createeventbutton"
+        android:background="@drawable/becomesponser"
         android:shadowColor="#2D3EC4"
         android:text="@string/create_event"
-        android:textColor="#1432DB"
+        android:textColor="#FFFFFF"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F59B5F"
         android:fontFamily="Arial"
         android:gravity="center"
-        android:text="@string/bth_connect"
-        android:textColor="#000000"
-        android:textSize="50sp"
+        android:text="@string/events"
+        android:textColor="#747572"
+        android:textSize="30sp"
         android:textStyle="italic" />
 
     <LinearLayout
         android:id="@+id/xmlActivity1Linear"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="0dp"
+        android:layout_below="@+id/activity1_back"
+        android:layout_marginTop="32dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/act1button0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/act1button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no scheduled event" />
+            android:background="@drawable/becomesponser"
+            android:text="no scheduled event"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
 
