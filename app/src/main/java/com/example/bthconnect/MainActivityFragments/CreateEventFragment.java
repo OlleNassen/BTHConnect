@@ -8,15 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.bthconnect.MainActivity;
 import com.example.bthconnect.R;
 import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -43,7 +40,7 @@ public class CreateEventFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("events");
 
-        backBtn = (Button)view.findViewById(R.id.activity2_back);
+        backBtn = (Button)view.findViewById(R.id.student_list_back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -32,11 +32,19 @@ public class StudentListFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
     ChildEventListener childEventListener;
+    Button back_button;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.student_list_fragment, container, false);
+        back_button = (Button)view.findViewById(R.id.student_list_back);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(3);
+            }
+        });
         final Context context = getContext();
         if(context == null)return view;
 

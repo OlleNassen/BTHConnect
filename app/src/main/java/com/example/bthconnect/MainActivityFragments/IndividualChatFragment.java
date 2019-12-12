@@ -35,11 +35,20 @@ public class IndividualChatFragment extends Fragment {
     Button btn_send;
     EditText textInput;
     LinearLayout linearLayout;
+    Button back_but_;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.individual_chatting_fragment, container, false);
+
+        back_but_ = (Button)view.findViewById(R.id.individual_activity_back);
+        back_but_.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).setViewPager(6);
+            }
+        });
 
         linearLayout = (LinearLayout)view.findViewById(R.id.xmlIndividualLinearLayout);
 

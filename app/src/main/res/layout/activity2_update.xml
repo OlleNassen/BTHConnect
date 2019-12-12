@@ -6,7 +6,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/activity2_back"
+        android:id="@+id/student_list_back"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:background="@drawable/backbutton"
