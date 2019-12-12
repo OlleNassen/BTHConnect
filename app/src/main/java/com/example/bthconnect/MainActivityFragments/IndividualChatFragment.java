@@ -63,6 +63,10 @@ public class IndividualChatFragment extends Fragment {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(childEventListener != null)
+                {
+                    myRef.removeEventListener(childEventListener);
+                }
                 ((MainActivity)getActivity()).setViewPager(3);
             }
         });
@@ -93,6 +97,13 @@ public class IndividualChatFragment extends Fragment {
                 TextView temp = new TextView(getContext());
                 temp.setText(value);
                 linearLayout.addView(temp);
+
+                scrollView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        scrollView.fullScroll(View.FOCUS_DOWN);
+                    }
+                });
             }
 
             @Override

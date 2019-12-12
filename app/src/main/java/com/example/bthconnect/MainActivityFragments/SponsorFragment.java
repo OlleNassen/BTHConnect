@@ -78,6 +78,11 @@ public class SponsorFragment extends Fragment {
 
                     myRef.push().setValue(sponsor + " has become a sponsor to " + ((MainActivity)getActivity()).localUser.getDisplayName() + ".");
 
+                    if(childEventListener != null)
+                    {
+                        myRef.removeEventListener(childEventListener);
+                    }
+
                     ((MainActivity)getActivity()).setIndividualChat(sponsor);
                     ((MainActivity)getActivity()).setViewPager(7);
                 }

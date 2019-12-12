@@ -90,6 +90,10 @@ public class ChatFragment extends Fragment {
         btn_go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(childEventListener != null)
+                {
+                    myRef.removeEventListener(childEventListener);
+                }
                 ((MainActivity)getActivity()).setViewPager(3);
             }
         });
