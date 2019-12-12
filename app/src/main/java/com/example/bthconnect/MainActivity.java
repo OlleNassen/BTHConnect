@@ -81,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter((fragAdapter));
     }
 
+    public void initEventsFragment()
+    {
+        EventsFragment ptr = (EventsFragment)fragAdapter.getItem(4);
+        ptr.initEventsFragment();
+        ptr.initChildListeners();
+    }
+
     public void initPollVoteFragment(String id, String name, String time, String date, String loc){
         PollVoteFragment ptr = (PollVoteFragment)fragAdapter.getItem(9);
         ptr.initPollFragment(id, name, time, date, loc);

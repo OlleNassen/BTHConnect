@@ -33,7 +33,7 @@
 
 
     <Button
-        android:id="@+id/activity3_create_event"
+        android:id="@+id/xmlActivity3Submit"
         android:layout_width="117dp"
         android:layout_height="41dp"
         android:layout_centerHorizontal="true"
@@ -83,14 +83,7 @@
                 android:id="@+id/radioButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/yes"
-                />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/no" />
+                android:text="I am attending" />
 
 
         </RadioGroup>
