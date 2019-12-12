@@ -11,14 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="ThisShouldNotBeHere"
         app:layout_constraintBottom_toTopOf="@+id/xmlIndividualScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/individual_activity_back" />
 
     <ScrollView
         android:id="@+id/xmlIndividualScroll"
@@ -56,14 +55,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
         android:background="#F30D58"
         android:text="@string/home"
-        app:layout_constraintBottom_toTopOf="@+id/xmlIndividualScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/xmlIndividualScroll"
-        app:layout_constraintTop_toTopOf="@+id/xmlIndividualChatPerson" />
+        app:layout_constraintTop_toTopOf="@+id/individual_activity_back" />
 
     <EditText
         android:id="@+id/xmlIndividualChatInput"
